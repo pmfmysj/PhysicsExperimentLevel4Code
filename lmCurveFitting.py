@@ -13,8 +13,8 @@ def model(T, I_0, A, delta_E):
 # 实验数据
 data = pd.read_csv('image.csv', header=None)
 array_2d = data.to_numpy()
-tData = array_2d.ravel()
-iData = np.full(786432, 300)
+iData = array_2d.ravel()
+tData = np.full(10, 300)
 p0 = [1e-3, 1e5, 1e-20]  # 初值猜测
 
 # LM 算法拟合，设置初始猜测值
