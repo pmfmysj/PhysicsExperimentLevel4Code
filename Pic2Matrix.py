@@ -23,5 +23,5 @@ print(avg)
 
 # 导出为 CSV 文件
 np.savetxt(csvFilePath, pixelMatrix, delimiter=",", fmt='%d') 
-
 print(f"像素矩阵已导出为: {csvFilePath}")
+
