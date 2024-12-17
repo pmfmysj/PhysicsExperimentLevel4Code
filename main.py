@@ -1,5 +1,6 @@
-from pic2Numpy import pic2Numpy
-from FittingLevenbergMarquardt import lmFitting
+import pic2Numpy 
+import FittingLM as lm40200
 
-pic2Numpy()
-lmFitting()
+# pic2Numpy.pic2Numpy()
+lm40200.lmFitting()
+
