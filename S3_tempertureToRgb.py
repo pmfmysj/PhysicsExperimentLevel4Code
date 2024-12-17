@@ -21,17 +21,17 @@ def temToRgb(tMatrix):
                 tNormed = (t - 10) / (210 - 10)  # 标准化温度值 (20 -> 0, 200 -> 1)
 
                 # 使用彩虹色谱法进行映射
-                if tNormed <= 0.1 :  # 蓝色到绿色
+                if tNormed <= 0.2 :  # 蓝色到绿色
                     r = 0
-                    g = int(255 * tNormed / 0.1)
+                    g = int(255 * tNormed / 0.2)
                     b = 255
                 elif tNormed <= 0.5 :  # 绿色到黄色
-                    r = int(255 * (tNormed - 0.1) / 0.4)
+                    r = int(255 * (tNormed - 0.2) / 0.3)
                     g = 255
                     b = 0
-                elif tNormed <= 0.9:  # 黄色到橙色
+                elif tNormed <= 0.875:  # 黄色到橙色
                     r = 255
-                    g = int(255 * (1 - (tNormed - 0.5) / 0.4))
+                    g = int(255 * (1 - (tNormed - 0.5) / 0.375))
                     b = 0
                 else:  # 橙色到红色
                     r = 255
