@@ -1,3 +1,12 @@
 /garbage/
 /.venv/
 /__pycache__/
+/analyse/
+/analyse_s1ed/
+/analyse_s1ed_s2ed/
+/analyse_s1ed_s2ed_s3ed/
+/train/
+/train_trained/
+/train_s1ed/
+/train_s1ed_s2ed/
+/train_s1ed_s2ed_s3ed/
