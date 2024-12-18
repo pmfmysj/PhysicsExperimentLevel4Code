@@ -7,8 +7,8 @@ from PIL import Image
 # 将矩阵通过颜色映射转化成彩色图
 def temToRgb(tMatrix):
 
-    tMin = 10
-    tMax = 210
+    tMin = 312
+    tMax = 320
     tN1 = 0.2
     tN2 = 0.5
 
@@ -20,11 +20,11 @@ def temToRgb(tMatrix):
         for j in range(tMatrix.shape[1]):
             t = tMatrix[i, j]  # 获取当前温度值
             '''
-            t<10        蓝色
-            10<t<50     蓝色->青色
-            50<t<110    绿色->黄色
-            110<t<210   黄色->红色
-            210<t       红色
+            t<tMin        蓝色
+            tMin<t<tMin+(tMax-tMin)*tn1     蓝色->青色
+            tMin+(tMax-tMin)*tn1<t<tMin+(tMax-tMin)*tn2    绿色->黄色
+            tMin+(tMax-tMin)*tn1<t<tMax   黄色->红色
+            tMax<t       红色
             '''
             # 温度范围限制
             if t < tMin:
@@ -39,11 +39,11 @@ def temToRgb(tMatrix):
                 if tNormed <= tN1 :             # 蓝色到绿色
                     r = 0
                     g = int(255 * tNormed / tN1)
-                    b = 255
+                    b = 255 - int(127 * tNormed / tN1)
                 elif tNormed <= tN2 :           # 绿色到黄色
                     r = int(255 * (tNormed - tN1) / (tN2 - tN1))
                     g = 255
-                    b = 0
+                    b = int(128 * (1 - (tNormed - tN1) / (tN2 - tN1)))
                 else:                           # 黄色到红色
                     r = 255
                     g = int(255 * (1 - (tNormed - tN2) / (1 - tN2)))
