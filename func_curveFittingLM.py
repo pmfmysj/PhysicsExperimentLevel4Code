@@ -8,7 +8,7 @@ def model(T, C, I0, A, B): #B=- delta E / k_B
 
 def inverseModel(I, C, I0, A, B):
     x = I0 / (I - C) - 1
-    x = np.clip(x, 1e-10, np.inf)  # 确保值不小于 1e-10 
+    #x = np.clip(x, 1e-10, np.inf)  # 确保值不小于 1e-10 
     result =  B / (np.log(x) -np.log(A)) - 273.15
     return result
 
