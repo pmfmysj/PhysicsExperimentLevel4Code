@@ -46,7 +46,7 @@ def picToBrightnessForTrain():
     #⬇️将平均值和tData合并导出成txt 方便查看或在origin上操作
     tData = list(range(40,201,20))
     data = np.column_stack((avgs, tData))
-    np.savetxt("datas.txt", data, delimiter="\t", header="X\tY", fmt="%.2f")
+    np.savetxt("datas.txt", data, delimiter="\t", header="I\tT", fmt="%.2f")
 
 # 将任意图片转化成像素点亮度的矩阵
 def pictureToBrightness(image, imageName, outputFolder):
